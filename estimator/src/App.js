@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
-import Lines from './Lines';
-import AddLine from './AddLine';
+import Navbar from './components/Navbar';
+import { BrowserRouter, Route } from 'react-router-dom';
+import ProductLine from './components/ProductLine';
+import Options from './components/Options';
+import Order from './components/Order';
+import Home from './components/Home';
+
 
 class App extends Component {
   state = {
+    productLine : '',
     lines : [
-      {
-        text: 'Example sign text',
-        id: Math.random()
-      }
+      { text: '', id: 1 },
     ]
   }
   addLine = (line) => {
@@ -38,12 +41,16 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="app">
-        <h1>Simple Estimator</h1>
-        <p>Please add your lines</p>
-        <Lines removeLine={ this.removeLine } editLine={ this.editLine } lines={ this.state.lines } />
-        <AddLine addLine={ this.addLine } />
-      </div>
+      <BrowserRouter>
+        <div className="app">
+          <Navbar />
+          <Route exact path='/' component={Home}/>
+          <Route path='/product-line' component={ProductLine}/>
+          <Route path='/options' component={Options} state={this.state} />
+          <Route path='/order' component={Order}/>
+          {/*<Route component={NoMatch}/>*/}
+        </div>
+      </BrowserRouter>
     );
   }
 }
