@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Navbar from './components/Navbar';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Home from './components/Home';
 import ProductLine from './components/ProductLine';
 import Options from './components/Options';
 import Order from './components/Order';
-import Home from './components/Home';
 
 
 class App extends Component {
@@ -44,11 +44,12 @@ class App extends Component {
       <BrowserRouter>
         <div className="app">
           <Navbar />
-          <Route exact path='/' component={Home}/>
-          <Route path='/product-line' component={ProductLine}/>
-          <Route path='/options' component={Options} state={this.state} />
-          <Route path='/order' component={Order}/>
-          {/*<Route component={NoMatch}/>*/}
+          <Switch>
+            <Route exact path='/' component={Home}/>
+            <Route path='/product-line' component={ProductLine}/>
+            <Route path='/options' component={Options}/>
+            <Route path='/order' component={Order}/>
+          </Switch>
         </div>
       </BrowserRouter>
     );
