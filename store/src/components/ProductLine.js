@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 function ProductLine(props) {
   return (
     <div className="product-line">
-      <h1>Please select a product line</h1>
+      <h1>Please select a product</h1>
       <ul>
         <li>
-          <Link className="button" value="flat-cut-metal" to="/options">Flat Cut Metal</Link>
+          <Link className="button" value="sunglasses" to="/options">Screen Printing</Link>
         </li>
       </ul>
     </div>

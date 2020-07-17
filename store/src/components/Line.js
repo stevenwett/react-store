@@ -1,22 +1,27 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { deleteLine, editLine } from '../actions/LineActions'
 
 class Line extends Component {
-  handleClick = () => {
-    this.props.deleteLine(this.props.line.id);
+  state = this.props.line;
+
+  handleClick = (e) => {
+    e.preventDefault();
+    this.props.deleteLine(this.state.id);
   }
   handleChange = (e) => {
     e.preventDefault();
-    {/*
-    this.props.updateLine(e.target.value);
-    */}
-
+    this.setState({
+      text: e.target.value
+    }, () => {
+      this.props.editLine(this.state);
+    });
   }
   render() {
     return (
-      <div className="line" key={this.props.line.id}>
+      <div className="line">
         <label htmlFor="text">Line Text</label>
-        <input htmlFor="text" value={this.props.line.text} onChange={(e) => { this.handleChange(e) } }/>
+        <input type="text" value={this.state.text} onChange={ this.handleChange }/>
         <button className="button" onClick={this.handleClick}>
           Delete Line
         </button>
@@ -34,7 +39,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    deleteLine: (id) => dispatch({type: 'DELETE_LINE', id: id})
+    deleteLine: (id) => dispatch(deleteLine(id)),
+    editLine: (line) => dispatch(editLine(line))
   }
 }
 
