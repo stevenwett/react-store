@@ -5,12 +5,18 @@ class Line extends Component {
   handleClick = () => {
     this.props.deleteLine(this.props.line.id);
   }
+  handleChange = (e) => {
+    e.preventDefault();
+    {/*
+    this.props.updateLine(e.target.value);
+    */}
+
+  }
   render() {
-    console.log(this.props);
     return (
       <div className="line" key={this.props.line.id}>
         <label htmlFor="text">Line Text</label>
-        <input htmlFor="text" value={this.props.line.text}/>
+        <input htmlFor="text" value={this.props.line.text} onChange={(e) => { this.handleChange(e) } }/>
         <button className="button" onClick={this.handleClick}>
           Delete Line
         </button>

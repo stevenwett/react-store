@@ -7,7 +7,17 @@ const initState = {
 }
 
 const rootReducer = (state = initState, action) => {
-	console.log(action);
+	// console.log(action);
+	console.log(state);
+	if (action.type === 'DELETE_LINE') {
+		let newLines = state.lines.filter(line => {
+			return action.id !== line.id
+		});
+		return {
+			...state, 
+			lines: newLines
+		}
+	}
 	return state;
 }
 
