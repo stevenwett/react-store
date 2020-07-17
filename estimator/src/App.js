@@ -8,12 +8,6 @@ import Order from './components/Order';
 
 
 class App extends Component {
-  state = {
-    productLine : '',
-    lines : [
-      { text: '', id: 1 },
-    ]
-  }
   addLine = (line) => {
     line.id = Math.random();
     let lines = [...this.state.lines, line];
@@ -49,6 +43,9 @@ class App extends Component {
             <Route path='/product-line' component={ProductLine}/>
             <Route path='/options' component={Options}/>
             <Route path='/order' component={Order}/>
+            {/* <Route path='/history' component={History}/>'*/}
+            {/* <Route path='/history/quote/:quote_id component={Estimate}/>'*/}
+            {/* <Route path='/history/order/:order_id' component={Order}/>'*/}
           </Switch>
         </div>
       </BrowserRouter>

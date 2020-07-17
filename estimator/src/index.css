@@ -39,10 +39,11 @@ nav li {
 nav a {
 	padding: 0.5rem;
 	text-decoration: none;
+	color: #ccc;
 }
 
 nav a.active {
-	text-decoration: underline;
+	color: #777;
 }
 
 nav li:first-child a {
