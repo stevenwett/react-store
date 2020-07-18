@@ -163,9 +163,9 @@ th {
 	padding-bottom: 0.5rem;
 }
 
-td {
+td,
+th {
 	padding: 0.5rem;
-	border-bottom: #ccc;
 }
 
 tr:nth-child(even) td {
