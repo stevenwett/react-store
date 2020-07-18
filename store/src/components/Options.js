@@ -31,11 +31,11 @@ class Options extends Component {
         )
       })
     ) : (
-      <div>No lines</div>
+      <div className="no-lines">No lines</div>
     );
 
     return (
-      <div className="options">
+      <div className="route options">
           <h1>Printing Options</h1>
           <p>Please add your lines</p>
           {lineList}

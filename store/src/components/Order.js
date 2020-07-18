@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 class Order extends Component {
   render() {
@@ -17,7 +18,7 @@ class Order extends Component {
       </tr>
     );
     return (
-      <div className="Order">
+      <div className="route order">
         <h1>Your Summary</h1>
         <table>
           <thead>
@@ -29,6 +30,9 @@ class Order extends Component {
             {summaryList}
           </tbody>
         </table>
+        <div className="continue-submit">
+          <Link className="button" to="/">Complete Order</Link>
+        </div>
       </div>
     )
   }
