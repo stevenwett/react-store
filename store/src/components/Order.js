@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 
 class Order extends Component {
   render() {
-    const summaryList = this.props.lines.length ? (
-      this.props.lines.map(line => {
+    const summaryList = this.props.products.length ? (
+      this.props.products.map(product => {
         return (
-          <tr key={line.id}>
-            <td>{line.text}</td>
+          <tr key={product.id}>
+            <td>{product.name} x {product.quantity}</td>
           </tr>
         )
       })
@@ -39,9 +39,8 @@ class Order extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
-    lines: state.lines
+    products: state.products
   }
 }
 

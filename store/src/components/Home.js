@@ -5,7 +5,7 @@ function Home(props) {
   return (
     <div className="route home">
       <h1>Welcome to the Apple Store!</h1>
-      <Link className="button" to="/product-line">Start Shopping</Link>
+      <Link className="button" to="/select">Start Shopping</Link>
     </div>
   )
 }

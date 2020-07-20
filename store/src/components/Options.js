@@ -1,54 +1,28 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import Line from './Line';
-import { addLine } from '../actions/LineActions'
+import Product from './Product';
 
 class Options extends Component {
-  state = {
-    text: ''
-  }
-
-  handleChange = (e) => {
-    this.setState({
-      [e.target.id]: e.target.value
-    })
-  }
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.props.addLine(this.state.text);
-  }
-
   render() {
-    const { lines } = this.props 
-    const lineList = lines.length ? (
-      lines.map(line => {
+    const { products } = this.props 
+    const productList = products.length ? (
+      products.map(product => {
         return (
-          <div className="line-wrapper" key={line.id}>
-            <Line line={line} />
+          <div className="product-wrapper" key={product.id}>
+            <Product product={product} />
           </div>
         )
       })
     ) : (
-      <div className="no-lines">No apples chosen</div>
+      <div className="no-products">No apples chosen</div>
     );
 
     return (
       <div className="route options">
           <h1>Your Basket</h1>
-          {lineList}
-          <Link className="add-another" to="/product-line">Pick another apple</Link>
-          {/*
-          <form className="add-line" onSubmit={ this.handleSubmit }>
-            <label htmlFor="text">New line text</label>
-            <input type="text" id="text" onChange={ this.handleChange } />
-            <button className="button">
-              Add Line
-            </button>
-          </form>
-          */}
-
+          {productList}
+          <Link className="add-another" to="/select">Pick another apple</Link>
           <div className="continue-order">
             <Link className="button" to="/order">Review Order</Link>
           </div>
@@ -59,14 +33,8 @@ class Options extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    lines: state.lines
+    products: state.products
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addLine: (text) => dispatch(addLine(text))
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Options);
+export default connect(mapStateToProps)(Options);

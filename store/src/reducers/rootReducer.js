@@ -1,45 +1,46 @@
 const initState = {
-  lines: [
+  products: [
   ]
 }
 
 const rootReducer = (state = initState, action) => {
-  if (action.type === 'EDIT_LINE') {
-    let newLines = [...state.lines]
-    let updatedLine = newLines.find(line => line.id === action.line.id);
-    updatedLine['text'] = action.line.text
+  if (action.type === 'EDIT_PRODUCT') {
+    let newProducts = [...state.products]
+    let updatedProduct = newProducts.find(product => product.id === action.product.id);
+    updatedProduct['quantity'] = action.product.quantity
     return {
       ...state, 
-      lines: newLines
+      products: newProducts
     }
   }
 
-  if (action.type === 'ADD_LINE') {
-    let newLine = {
-      id: Math.random(),
-      text: action.text
+  if (action.type === 'ADD_PRODUCT') {
+    let newProducts = [...state.products]
+    let existingProduct = newProducts.find(product => product.slug === action.product.slug);
+    if( undefined !== existingProduct ) {
+      existingProduct['quantity']++
+    } else {
+      let newProduct = {
+        id: Math.random(),
+        slug: action.product.slug,
+        name: action.product.name,
+        quantity: 1
+      }
+      newProducts = [...state.products, newProduct];
     }
-    let newLines = [...state.lines, newLine];
     return {
       ...state, 
-      lines: newLines
+      products: newProducts
     }
   }
 
-  if (action.type === 'DELETE_LINE') {
-    let newLines = state.lines.filter(line => {
-      return action.id !== line.id
+  if (action.type === 'DELETE_PRODUCT') {
+    let newProducts = state.products.filter(product => {
+      return action.id !== product.id
     });
     return {
       ...state, 
-      lines: newLines
-    }
-  }
-
-  if (action.type === 'GET_LINES') {
-    return {
-      ...state,
-      lines: state.lines
+      products: newProducts
     }
   }
   return state;

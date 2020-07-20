@@ -15,10 +15,10 @@ code {
 
 .app {
 	position: absolute;
-	width: 448px;
+	width: 498px;
 	margin-top: 50px;
 	left: 50%;
-	margin-left: -224px;
+	margin-left: -249px;
 	margin-bottom: 100px;
 }
 
@@ -26,6 +26,10 @@ code {
 	padding: 1.5rem;
 	box-shadow: 0 10px 32px -12px rgba(0, 0, 0, 0.45);
 	border-radius: 0.5rem;
+}
+
+h2 {
+	margin: 0;
 }
 
 p {
@@ -57,30 +61,33 @@ nav a.active {
 	text-align: center;
 }
 
-.line-list {
+.product-list {
 	margin-bottom: 2rem;
 }
 
-.add-line,
-.line,
+.add-product,
+.product,
 .order table {
 	margin: 0 auto;
 	text-align: left;
-	max-width: 65%;
 }
 
-.line {
+.product {
 	margin-bottom: 0.75rem;
+	text-align: left;
+	padding: 1rem;
+	border: 1px solid #ccc;
+	border-radius: 0.5rem;
 }
 
-.add-line {
+.add-product {
 	margin-top: 2rem;
 }
 
-.line input,
-.add-line input,
-.line button,
-.add-line button {
+.product input,
+.add-product input,
+.product button,
+.add-product button {
 	border-radius: 0;
 	outline: none;
 	border: 1px solid #ccc;
@@ -89,8 +96,8 @@ nav a.active {
 	margin-top: 0;
 }
 
-.line label,
-.add-line label {
+.product label,
+.add-product label {
 	display: block;
 	font-size: 0.7rem;
 	margin-bottom: 0.25rem;
@@ -110,22 +117,11 @@ nav a.active {
 	border-top: 1px solid #ccc;
 }
 
-.product-line ul {
-	list-style: none;
-	padding: 0;
+.product-select .button {
+	width: 100%;
 }
 
-.product-line li {
-	margin-bottom: 0;
-	margin-right: 1rem;
-	display: inline-block;
-}
-
-.product-line li:nth-child(even) {
-	margin-right: 0;
-}
-
-.no-lines {
+.no-products {
 	border-radius: 0.5rem;
 	background-color: #f9f9f9;
 	padding: 1rem;
@@ -139,12 +135,11 @@ nav a.active {
 	text-decoration: none;
 	color: #333;
 	padding-bottom: 1px;
-	border-bottom: 1px solid #333;
 	transition: all 0.2s ease-in-out;
 }
 
 .add-another:hover {
-	border-bottom: 1px solid #ccc;
+	text-decoration: none;
 }
 
 .button {
