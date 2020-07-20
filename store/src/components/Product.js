@@ -21,11 +21,11 @@ class Product extends Component {
   render() {
     return (
       <article className="product row no-gutters">
-        <div className="col-8">
+        <div className="col-7">
           <h2>{ this.state.name }</h2>
         </div>
-        <div className="col-4">
-          <label htmlFor="quantity">Quantity</label>
+        <div className="col-5 text-right">
+          <label htmlFor="quantity">Qty</label>
           <select value={this.state.quantity} onChange={ this.handleChange }>
             <option value="0" className="none">0 (delete)</option>
             <option value="1" className="none">1</option>

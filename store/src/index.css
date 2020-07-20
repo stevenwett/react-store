@@ -30,6 +30,8 @@ code {
 
 h2 {
 	margin: 0;
+	font-size: 1.4rem;
+	color: #444;
 }
 
 p {
@@ -73,10 +75,10 @@ nav a.active {
 }
 
 .product {
-	margin-bottom: 0.75rem;
+	margin-top: 0.75rem;
 	text-align: left;
 	padding: 1rem;
-	border: 1px solid #ccc;
+	border: 2px solid #ddd;
 	border-radius: 0.5rem;
 }
 
@@ -98,9 +100,10 @@ nav a.active {
 
 .product label,
 .add-product label {
-	display: block;
+	display: inline-block;
 	font-size: 0.7rem;
 	margin-bottom: 0.25rem;
+	margin-right: 0.5rem;
 	font-weight: 300;
 	text-transform: uppercase;
 }
@@ -114,11 +117,7 @@ nav a.active {
 .continue-submit {
 	margin-top: 1.5rem;
 	padding-top: 1.5rem;
-	border-top: 1px solid #ccc;
-}
-
-.product-select .button {
-	width: 100%;
+	border-top: 2px solid #eee;
 }
 
 .no-products {
@@ -148,7 +147,7 @@ nav a.active {
 	text-decoration: none;
 	background: #ccc;
 	font-weight: bold;
-	color: #000;
+	color: #222;
 	border: 0;
 	outline: none;
 	cursor: pointer;
@@ -161,7 +160,30 @@ nav a.active {
 
 .button:hover,
 .button:focus {
-	background: #ccc;
+	text-decoration: none;
+	background: #ddd;
+	color: #000;
+}
+
+.product-select .button {
+	width: 100%;
+	background: #fff;
+	text-transform: none;
+	font-weight: 500;
+	font-size: 1.4rem;
+	border: 2px solid #ddd;
+	color: #444;
+	padding: 1rem;
+
+}
+
+.product-select .button:hover,
+.product-select .button:focus {
+	background: #f9f9f9;
+}
+
+select {
+	padding: 0.125rem;
 }
 
 table {
