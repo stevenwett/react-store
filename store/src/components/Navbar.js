@@ -7,9 +7,9 @@ const Navbar = (props) => {
 			<div className="container">
 				<ul>
 					<li><NavLink exact to="/">Home</NavLink></li>
-					<li><NavLink to="/product-line">Product Line</NavLink></li>
-					<li><NavLink to="/options">Options</NavLink></li>
-					<li><NavLink to="/order">Order</NavLink></li>
+					<li><NavLink to="/product-line">Select</NavLink></li>
+					<li><NavLink to="/options">Basket</NavLink></li>
+					<li><NavLink to="/order">Checkout</NavLink></li>
 				</ul>
 			</div>
 		</nav>

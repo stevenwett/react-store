@@ -20,6 +20,9 @@ code {
 	left: 50%;
 	margin-left: -224px;
 	margin-bottom: 100px;
+}
+
+.route {
 	padding: 1.5rem;
 	box-shadow: 0 10px 32px -12px rgba(0, 0, 0, 0.45);
 	border-radius: 0.5rem;
@@ -102,7 +105,7 @@ nav a.active {
 
 .continue-order,
 .continue-submit {
-	margin-top: 2rem;
+	margin-top: 1.5rem;
 	padding-top: 1.5rem;
 	border-top: 1px solid #ccc;
 }
@@ -128,6 +131,20 @@ nav a.active {
 	padding: 1rem;
 	font-weight: bold;
 	color: #777;
+}
+
+.add-another {
+	display: inline-block;
+	margin-top: 1.5rem;
+	text-decoration: none;
+	color: #333;
+	padding-bottom: 1px;
+	border-bottom: 1px solid #333;
+	transition: all 0.2s ease-in-out;
+}
+
+.add-another:hover {
+	border-bottom: 1px solid #ccc;
 }
 
 .button {

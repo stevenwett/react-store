@@ -14,16 +14,16 @@ class Order extends Component {
       })
     ) : (
       <tr>
-        <td>No lines</td>
+        <td>(none)</td>
       </tr>
     );
     return (
       <div className="route order">
-        <h1>Your Summary</h1>
+        <h1>Checkout</h1>
         <table>
           <thead>
             <tr>
-              <th>Lines</th>
+              <th>Apples</th>
             </tr>
           </thead>
           <tbody>

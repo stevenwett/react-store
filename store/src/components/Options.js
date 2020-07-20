@@ -31,14 +31,15 @@ class Options extends Component {
         )
       })
     ) : (
-      <div className="no-lines">No lines</div>
+      <div className="no-lines">No apples chosen</div>
     );
 
     return (
       <div className="route options">
-          <h1>Printing Options</h1>
-          <p>Please add your lines</p>
+          <h1>Your Basket</h1>
           {lineList}
+          <Link className="add-another" to="/product-line">Pick another apple</Link>
+          {/*
           <form className="add-line" onSubmit={ this.handleSubmit }>
             <label htmlFor="text">New line text</label>
             <input type="text" id="text" onChange={ this.handleChange } />
@@ -46,9 +47,10 @@ class Options extends Component {
               Add Line
             </button>
           </form>
+          */}
 
           <div className="continue-order">
-            <Link className="button" to="/order">Proceed to Order</Link>
+            <Link className="button" to="/order">Review Order</Link>
           </div>
       </div>
     )
