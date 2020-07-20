@@ -19,7 +19,6 @@ class Product extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <article className="product row no-gutters">
         <div className="col-8">
